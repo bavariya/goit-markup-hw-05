@@ -130,12 +130,29 @@ header {
   background-color: var(--color-hover);
   color: #ffffff;
 }
+
+.site-nav li {
+  position: relative;
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-hover);
+  border-radius: 4px;
+}
+
 .site-nav a {
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav a:hover,
@@ -220,6 +237,8 @@ header {
   text-align: center;
   border: transparent;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-portf:hover,
@@ -294,7 +313,6 @@ header {
 
 .work {
   padding-top: 0;
-  
 }
 
 .work-title,
@@ -334,10 +352,11 @@ header {
   position: absolute;
   bottom: 0px;
   left: 0px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.work-item a:hover, 
-.work-item a:focus{
-  box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+.work-item a:hover,
+.work-item a:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Наша команда */
@@ -394,6 +413,8 @@ header {
   height: 44px;
   border-radius: 50%;
   fill: #afb1b8;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-link:hover,
@@ -417,6 +438,8 @@ header {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-client:hover,
@@ -447,8 +470,10 @@ header {
   flex-wrap: wrap;
   gap: 30px;
 }
+
 .example-block li {
   flex-basis: calc((100% - 60px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .box {
@@ -458,8 +483,37 @@ header {
   padding: 20px 24px;
 }
 
-.example-link:hover {
+.example-block li:hover,
+.example-block li:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.work-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.example-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 297px;
+  background-color: rgba(33, 150, 243, 0.9);
+  color: var(--white-color);
+  padding: 63px 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example-link a:hover .example-animation,
+.example-link a:focus .example-animation {
+  transform: translateY(0%);
 }
 
 /* ---Футер--- */
@@ -489,6 +543,10 @@ footer a {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.02em;
+}
+
+.footer-hover {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-hover:hover,
@@ -535,6 +593,8 @@ footer a {
   border-radius: 50%;
   fill: var(--white-color);
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-footer-link:hover,
